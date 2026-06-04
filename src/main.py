@@ -1,5 +1,5 @@
 """
-Behavior Logger App - Kivy
+Maromizaha Behavior Logger
 
 - Creates a structured JSON file named with the timestamp of the first save.
 - Records scan/session parameters every 5 minutes, storing the actual save time.
@@ -20,7 +20,6 @@ from kivy.clock import Clock
 from kivy.core.window import Window
 from kivy.graphics import Color, Ellipse
 from kivy.metrics import dp
-from kivy.utils import platform
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.button import Button
 from kivy.uix.checkbox import CheckBox
@@ -32,6 +31,7 @@ from kivy.uix.scrollview import ScrollView
 from kivy.uix.spinner import Spinner
 from kivy.uix.textinput import TextInput
 from kivy.uix.widget import Widget
+from kivy.utils import platform
 
 from config import *
 from translations import (
@@ -493,8 +493,12 @@ class DataStore:
         if index < 0 or index >= len(self.data["scan_records"]):
             return False
         record = self.data["scan_records"].pop(index)
-        self.undo_stack.append({"type": "scan_delete", "index": index, "record": record})
-        self.data["behavior_sequence_start_index"] = self._behavior_index_after_last_scan()
+        self.undo_stack.append(
+            {"type": "scan_delete", "index": index, "record": record}
+        )
+        self.data["behavior_sequence_start_index"] = (
+            self._behavior_index_after_last_scan()
+        )
         self._save()
         return True
 
@@ -528,7 +532,9 @@ class DataStore:
             created += 1
 
         if created:
-            self.data["behavior_sequence_start_index"] = len(self.data["behavior_events"])
+            self.data["behavior_sequence_start_index"] = len(
+                self.data["behavior_events"]
+            )
             self.undo_stack.append({"type": "intermediate_scans", "count": created})
             self._save()
         return created
@@ -667,7 +673,9 @@ class DataStore:
         if record_type == "scan_delete":
             index = min(last["index"], len(self.data["scan_records"]))
             self.data["scan_records"].insert(index, record)
-            self.data["behavior_sequence_start_index"] = self._behavior_index_after_last_scan()
+            self.data["behavior_sequence_start_index"] = (
+                self._behavior_index_after_last_scan()
+            )
             self._save()
             return tr("Deleted scan restored.")
 
@@ -675,7 +683,9 @@ class DataStore:
             count = last["count"]
             if count > 0:
                 del self.data["scan_records"][-count:]
-                self.data["behavior_sequence_start_index"] = self._behavior_index_after_last_scan()
+                self.data["behavior_sequence_start_index"] = (
+                    self._behavior_index_after_last_scan()
+                )
                 self._save()
                 return trf("{count} intermediate scans removed.", count=count)
             return tr("Nothing was removed.")
@@ -1267,9 +1277,7 @@ class ScanListScreen(Screen):
                 width=dp(widths["delete"]),
                 height=dp(42),
             )
-            delete_button.bind(
-                on_press=lambda _btn, idx=index: self.delete_scan(idx)
-            )
+            delete_button.bind(on_press=lambda _btn, idx=index: self.delete_scan(idx))
             self.table.add_widget(delete_button)
 
             values = record.get("values", {})
@@ -1400,7 +1408,11 @@ class BehaviorScreen(Screen):
         self.sequence.text = " ".join(sequence)
 
     def refresh_scan_window(self) -> None:
-        record = self.store.data["scan_records"][-1] if self.store.data["scan_records"] else None
+        record = (
+            self.store.data["scan_records"][-1]
+            if self.store.data["scan_records"]
+            else None
+        )
         if not record:
             self.scan_window.text = tr("Current scan time window: none")
             return
@@ -1889,7 +1901,9 @@ class SettingsScreen(Screen):
         self.language_spinner.bind(text=self.change_language)
         form.add_widget(self.language_spinner)
 
-        form.add_widget(i18n_label("Screen orientation", size_hint_y=None, height=dp(42)))
+        form.add_widget(
+            i18n_label("Screen orientation", size_hint_y=None, height=dp(42))
+        )
         self.orientation_spinner = Spinner(
             text=tr("Landscape"),
             values=[tr("Landscape"), tr("Portrait")],
@@ -1922,7 +1936,9 @@ class SettingsScreen(Screen):
         if app is not None and hasattr(app, "set_screen_orientation"):
             orientation = "portrait" if label == tr("Portrait") else "landscape"
             app.set_screen_orientation(orientation)
-            self.status.text = trf("Screen orientation set to {orientation}.", orientation=label)
+            self.status.text = trf(
+                "Screen orientation set to {orientation}.", orientation=label
+            )
 
     def change_json_visibility(self, _checkbox: CheckBox, active: bool) -> None:
         if self._refreshing:
@@ -1941,7 +1957,9 @@ class SettingsScreen(Screen):
     def refresh_language(self) -> None:
         self.language_spinner.values = language_labels()
         self.language_spinner.text = language_label(current_language())
-        current_orientation = getattr(App.get_running_app(), "screen_orientation", "landscape")
+        current_orientation = getattr(
+            App.get_running_app(), "screen_orientation", "landscape"
+        )
         self.orientation_spinner.values = [tr("Landscape"), tr("Portrait")]
         self.orientation_spinner.text = tr(
             "Portrait" if current_orientation == "portrait" else "Landscape"
