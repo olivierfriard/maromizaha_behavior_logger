@@ -1,0 +1,68 @@
+{
+  "metadata": {
+    "first_save_time": "2026-05-17T12:15:34",
+    "created_file": "behavior_logs/2026-05-17_12-15-34.json",
+    "last_modified": "2026-05-17T12:26:14"
+  },
+  "scan_records": [
+    {
+      "recorded_at": "2026-05-17T12:25:35",
+      "values": {
+        "date": "2026-05-17",
+        "time": "12:20",
+        "group": "2MZ",
+        "CA": "Zabou",
+        "presence": "Zabou, Bob",
+        "climate": "Brouillard : 0",
+        "GPS point name": "300",
+        "h_CA": "9",
+        "h_arbre": "8",
+        "arbre": "Bendavenona",
+        "dist_CA": "1",
+        "dist_CACB": "",
+        "pos_CACB": ""
+      },
+      "edited_at": "2026-05-17T12:25:56"
+    },
+    {
+      "recorded_at": "2026-05-17T12:26:14",
+      "values": {
+        "date": "2026-05-17",
+        "time": "12:30",
+        "group": "2MZ",
+        "CA": "Zabou",
+        "presence": "Zabou, Bob",
+        "climate": "Brouillard : 0",
+        "GPS point name": "300",
+        "h_CA": "9",
+        "h_arbre": "8",
+        "arbre": "Bendavenona",
+        "dist_CA": "1",
+        "dist_CACB": "",
+        "pos_CACB": ""
+      }
+    }
+  ],
+  "behavior_events": [
+    {
+      "recorded_at": "2026-05-17T12:15:34",
+      "behavior": "Y"
+    },
+    {
+      "recorded_at": "2026-05-17T12:15:36",
+      "behavior": "D_AO"
+    },
+    {
+      "recorded_at": "2026-05-17T12:15:38",
+      "behavior": "SC"
+    },
+    {
+      "recorded_at": "2026-05-17T12:15:39",
+      "behavior": "VR"
+    }
+  ],
+  "gps_records": [],
+  "alimentation_records": [],
+  "behavior_sequence_start_index": 4,
+  "notes": ""
+}

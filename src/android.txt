@@ -1,0 +1,3 @@
+title=Maromizaha behaviors logger
+author=Olivier Friard
+orientation=all

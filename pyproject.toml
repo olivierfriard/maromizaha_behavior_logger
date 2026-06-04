@@ -1,0 +1,25 @@
+[project]
+name = "maromizaha-behavior-logger"
+version = "0.1.0"
+description = "Maromizaha behavior logger"
+authors = [
+    { name = "Olivier Friard", email = "olivier.friard@unito.it" }
+]
+dependencies = [
+    "kivy>=2.3.0",
+    "requests>=2.32.3",
+    "kivymd>=1.2.0",
+    "plyer>=2.1.0",
+    "kivy-garden>=0.1.5",
+    "setuptools>=74.1.2",
+    "pip>=25.3",
+    "cython==0.29.33",
+]
+readme = "README.md"
+requires-python = ">= 3.11,<3.12"
+
+[dependency-groups]
+dev = [
+    "buildozer>=1.5.0",
+]
+
