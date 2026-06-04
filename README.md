@@ -1,7 +1,7 @@
 # Maromizaha Behavior Logger
 
-:Author: `Olivier Friard <http://penelope.unito.it/friard>`_
-:Author: Marco Gamba
+Author: Olivier Friard http://penelope.unito.it/friard
+
 
 **Maromizaha Behavior Logger** is an event logging app for live observations.
 
