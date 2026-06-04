@@ -1,16 +1,18 @@
 # Maromizaha Behavior Logger
 
+**Maromizaha Behavior Logger** is an event logging app for live observations.
+
+It runs on GNU/Linux, Microsoft Windows, macOS and Android.
+
 Author: Olivier Friard http://penelope.unito.it/friard
 
 
-**Maromizaha Behavior Logger** is an event logging app for live observations.
 
 
 
 
 
-Legal
-=========================
+## Legal
 
 Copyright 2026 Olivier Friard
 
@@ -27,8 +29,10 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 
 
 
-Installation
-=========================
+## Installation
+
+### Android
+
 
 * Download the last version of the APK file from the GitHub repository release page:
 
