@@ -39,3 +39,14 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 (https://github.com/olivierfriard/maromizaha_behavior_logger/releases)[https://github.com/olivierfriard/BORIS-App/releases]
 
 * Follow `How to Install APK on Android <https://www.lifewire.com/install-apk-on-android-4177185>`_ to install
+
+
+
+### Microsoft-Windows
+
+* Download the repository
+
+```
+cd src
+uv run main.py
+```
