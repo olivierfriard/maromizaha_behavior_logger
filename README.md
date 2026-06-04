@@ -46,7 +46,12 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 
 * Download the repository https://github.com/olivierfriard/maromizaha_behavior_logger
 
+* from a terminale type:
+
 ```
 cd maromizaha_behavior_logger/src
 uv run main.py
 ```
+
+
+if the uv tool is not installed on your system, install it from https://docs.astral.sh/uv/getting-started/installation/
