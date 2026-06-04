@@ -42,11 +42,11 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 
 
 
-### Microsoft-Windows
+### GNU Linux, Microsoft-Windows and macOS
 
-* Download the repository
+* Download the repository https://github.com/olivierfriard/maromizaha_behavior_logger
 
 ```
-cd src
+cd maromizaha_behavior_logger/src
 uv run main.py
 ```
