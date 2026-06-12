@@ -55,3 +55,10 @@ uv run main.py
 
 
 if the **uv** tool is not installed on your system, install it from https://docs.astral.sh/uv/getting-started/installation/
+
+
+## Screeenshots
+
+![Starting page](screenshots/screenshot01.png)
+
+
