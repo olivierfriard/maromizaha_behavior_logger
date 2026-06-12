@@ -61,4 +61,15 @@ if the **uv** tool is not installed on your system, install it from https://docs
 
 ![Starting page](screenshots/screenshot01.png)
 
+![Scan](screenshots/screenshot02.png)
+
+![Behaviors](screenshots/screenshot03.png)
+
+![GPS point](screenshots/screenshot04.png)
+
+![Group management](screenshots/screenshot05.png)
+
+
+
+
 
